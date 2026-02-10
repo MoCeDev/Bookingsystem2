@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ---- Base image ----
 FROM node:20-alpine
 
@@ -15,3 +16,10 @@ COPY . .
 
 # ---- Default command ----
 CMD ["node", "index.js"]
+=======
+FROM nginx:alpine
+RUN rm -rf /usr/share/nginx/html/*
+COPY ./app /usr/share/nginx/html/
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+>>>>>>> ba7a9eb6fe8d04382e907cb27fa58af5a1f0588b
